@@ -1,5 +1,19 @@
 'use strict';
 
 module.exports = function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+    var resCollection = new Array();
+    for(var i=0; i<collectionA.length; i++){
+        if(objectB['value'].indexOf(collectionA[i].key) >= 0){
+            resCollection.push({
+                key:    collectionA[i].key,
+                count:  collectionA[i].count-1
+            }); 
+        }else{
+             resCollection.push({
+                key:    collectionA[i].key,
+                count:  collectionA[i].count
+            }); 
+        }
+    }
+    return resCollection;
 }
